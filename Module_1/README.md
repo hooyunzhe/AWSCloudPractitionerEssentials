@@ -48,19 +48,19 @@ Factors to consider when selecting a cloud strategy include required cloud appli
     - Run applications fully in the cloud
     - Migrate existing applications to the cloud
     - Design and build new applications in the cloud
-    - Suited for modern applications
+    - Suitable for modern applications
     - Can be built in two different ways
         - low-level infrastructure that requires management
         - higher-level services that reduce management, architecting and scaling requirements of the core infrastructure
 - ***On-premises***
     - Deploy resources with virtualization and resource management tools
     - Increase resource utilization with application management and virtualization technologies
-    - Suited for highly-confidential data
+    - Suitable for highly-confidential data
     - Similar to legacy IT infrastructure
 - ***Hybrid***
     - Connect cloud-based resources to on-premises infrastructure
     - Integrate cloud-based resources with legacy IT applications
-    - Suited for legacy applications that are
+    - Suitable for legacy applications that are
         - better maintained on premises
         - required by government regulations to keep certain records on premises
 
