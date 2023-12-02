@@ -48,6 +48,34 @@ Factors to consider when selecting a cloud strategy include required cloud appli
     - Run applications fully in the cloud
     - Migrate existing applications to the cloud
     - Design and build new applications in the cloud
-    - Build with low-level infrastructure that requires management or higher-level services that reduce management, architecting and scaling requirements of the core infrastructure
+    - Suited for modern applications
+    - Can be built in two different ways
+        - low-level infrastructure that requires management
+        - higher-level services that reduce management, architecting and scaling requirements of the core infrastructure
 - ***On-premises***
+    - Deploy resources with virtualization and resource management tools
+    - Increase resource utilization with application management and virtualization technologies
+    - Suited for highly-confidential data
+    - Similar to legacy IT infrastructure
 - ***Hybrid***
+    - Connect cloud-based resources to on-premises infrastructure
+    - Integrate cloud-based resources with legacy IT applications
+    - Suited for legacy applications that are
+        - better maintained on premises
+        - required by government regulations to keep certain records on premises
+
+### Benefits
+- ***Variable expense*** enables companies to implement innovative solutions while saving on costs
+- Ability to ***focus on applications and customers*** instead of spending time and money managing infrastructure and servers
+- ***Flexibility of capacity scaling*** means companies don't have to predict how much is needed beforehand
+- ***Massive economies of scale*** lowers the pay-as-you-go prices
+- ***Agility of resource access*** makes it faster and easier to develop and deploy applications
+- ***Global footprint*** provides companies to deploy applications to customers worldwide with low latency
+
+# Additional Resources
+- [AWS glossary](https://docs.aws.amazon.com/general/latest/gr/glos-chap.html)
+- [Whitepaper: Overview of Amazon Web Services](https://d0.awsstatic.com/whitepapers/aws-overview.pdf)
+- [AWS Fundamentals: Overview](https://aws.amazon.com/getting-started/fundamentals-overview/)
+- [What is cloud computing?](https://aws.amazon.com/what-is-cloud-computing/)
+- [Types of cloud computing](https://aws.amazon.com/types-of-cloud-computing/)
+- [Cloud computing with AWS](https://aws.amazon.com/what-is-aws/)
