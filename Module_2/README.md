@@ -1,5 +1,5 @@
 # Compute in the Cloud
-Amazon Elastic Compute Cloud (EC2) is highly flexible, cost effective and quick when compared to running servers on premises in a data center. <\br>
+Amazon Elastic Compute Cloud (EC2) is highly flexible, cost effective and quick when compared to running servers on premises in a data center. </br>
 The following has to be done with traditional on-premises resources
 
 - Spend time researching the type of servers and how many are needed
@@ -17,9 +17,9 @@ With EC2, Amazon already took care of all the hard parts, companies can
 - Save costs by paying only for the exact server capacity that's needed
 
 ### Multitenancy
-EC2 runs on top of physical host machines managed by AWS using virtualization technology. <\br>
-A hypervisor is responsible for sharing the underlying physical resources between instances, also known as virtual machines. <\br>
-It also makes sure that EC2 instances are secure and isolated from each other. <\br>
+EC2 runs on top of physical host machines managed by AWS using virtualization technology. </br>
+A hypervisor is responsible for sharing the underlying physical resources between instances, also known as virtual machines. </br>
+It also makes sure that EC2 instances are secure and isolated from each other. </br>
 
 ### How Amazon EC2 Works
 - ***Launch***
