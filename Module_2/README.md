@@ -192,4 +192,32 @@ Here's the flow
 - Lambda runs the code only when triggered
 - Pay only for the compute time that's used
 
-###
+### Containers
+Provide a standard way to package an application's code and dependencies into a single object. </br>
+Suitable for processes and workflows with essential requirements for security, reliability and scalability. </br>
+
+### Amazon Elastic Container Service (Amazon ECS)
+A highly scalable and high-performance container management system. </br>
+Supports Docker containers and API calls to launch and stop Docker-enabled applications. </br>
+Docker is an open-source software platform that enables quick building, testing and deploying of applications. </br>
+Amazon ECS supports both Docker Community Edition and Docker Enterprise Edition, which is subscription-based. </br>
+
+### Amazon Elastic Kubernetes Service (Amazon EKS)
+A fully managed service for running Kubernetes on AWS. </br>
+Kubernetes is an open-source system that enables deployment and management of containerized applications at scale. </br>
+AWS actively works together with the Kubernetes community to allow new features and functionalities to be applied easily to applications managed by Amazon EKS. </br>
+
+### Amazon Fargate
+A serverless compute engine for containers that works with both Amazon ECS and Amazon EKS. </br>
+As AWS Fargate manages the server infrastructure, there's no need to provision or manage servers. </br>
+This allows companies to focus on innovating and developing applications. </br>
+Again, only the resources that are required to run the containers need to be paid. </br>
+
+# Additional Resources
+- [Compute on AWS](https://aws.amazon.com/products/compute)
+- [AWS Compute Blog](https://aws.amazon.com/blogs/compute/)
+- [AWS Compute Services](https://docs.aws.amazon.com/whitepapers/latest/aws-overview/compute-services.html)
+- [Hands-On Tutorials: Compute](https://aws.amazon.com/getting-started/hands-on/?awsf.getting-started-category=category%23compute&awsf.getting-started-content-type=content-type%23hands-on)
+- [Category Deep Dive: Serverless](https://aws.amazon.com/getting-started/deep-dive-serverless/)
+- [Amazon EC2 Reserved Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-reserved-instances.html)
+- [How Savings Plans apply to usage](https://docs.aws.amazon.com/savingsplans/latest/userguide/sp-applying.html)
