@@ -106,4 +106,90 @@ It also makes sure that EC2 instances are secure and isolated from each other. <
         - The instance is terminated
         - A new Reserved Instance that matches the attributes is purchased
 - ***EC2 Instance Savings Plan***
-    - Hourly spend commitment
+    - Hourly spend commitment to an instance family and Region for a 1-year or 3-year term
+    - Savings of up to 72% compared to On-Demand rates, which is similar to that of Standard Reserved Instances
+    - Usage beyond the commitment is charged at regular On-Demand rates
+    - Good when flexibility is needed, as the Availability Zone, instance size, OS or tenancy doesn't affect the savings
+    - Doesn't include an EC2 capacity reservation option
+- ***Spot Instances***
+    - Utilize unused Amazon EC2 computing capacity
+    - Savings of up to 90% compared to On-Demand rates
+    - Ideal for workloads with flexible start and end times, or those that can withstand interruptions
+- ***Dedicated Hosts***
+    - Physical servers with fully dedicated Amazon EC2 instance capacity
+    - There are two types
+        - On-Demand Dedicated Hosts
+        - Dedicated Hosts Reservations
+    - Most expensive out of all options
+
+## Scaling Amazon EC2
+Most businesses have ***varying customer workloads***, there'll be times with high demand and times with no demand at all. </br>
+The ***on-premises data center dilemma*** is the question of how much is the right amount of hardware to purchase? </br>
+Buying for the average usage means there'll be no money wasted on average, but it won't be enough for the peak loads </br>
+Buying for the max load results not just in waste of resources, but waste of money as well. </br>
+This is where AWS comes in to tackle the impossible problem of on-premises data centers. </br>
+
+### Amazon EC2 Auto Scaling
+This service enables companies to automatically add or remove Amazon EC2 instances in response to changing demand, which helps maintain a greater sense of application availability. </br>
+There are two approaches
+
+- ***Dynamic scaling*** responds to changing demand
+- ***Predictive scaling*** automatically schedules the right number of Amazon EC2 instances based on predicted demand
+
+They can be used together to achieve faster scaling </br>
+When creating an ***Auto Scaling Group***, there are three things to configure
+
+- ***Minimum capacity*** is the number of Amazon EC2 instances that'll always be running
+- ***Desired capacity*** is the number of desired Amazon EC2 instances that defaults to the minimum capacity if not set
+- ***Maximum capacity*** is the maximum number of Amazon EC2 instances that can be scaled to
+
+All of this results in a cost-effective architecture that provides the best customer experience while reducing expenses. </br>
+
+## Directing Traffic with Elastic Load Balancing
+When there are multiple Amazon EC2 instances running the same program serving the same purpose, how does an incoming request know which one to go to? </br>
+This is where the ***Elastic Load Balancing*** comes in. </br>
+Acting as a single point of contact for all incoming web traffic to the Auto Scaling Group, it automatically distributes them among the Amazon EC2 instances to make sure that no single one has to carry the bulk of it. </br>
+The combined use of Elastic Load Balancing and Amazon EC2 Auto Scaling ensures that applications provide high performance and availability. </br>
+
+## Messaging and Queuing
+When applications communicate directly, problems arise when one of them fails. </br>
+This is called a ***tightly coupled*** architecture, which is flawed and unreliable. </br>
+A more reliable architecture is ***loosely coupled***, where failures are isolated and don't cascade throughout the entire system. </br>
+This can be achieved by designing applications with a ***microservices*** approach. </br>
+Here are the two services that facilitate application integration. </br>
+
+### Amazon Simple Queue Service (SQS)
+A messaging queue service that enables software components to send, store and receive messages between each other, without losing messages or requiring other services to be available. </br>
+Here's the flow
+
+- Applications send messages into a queue
+- Users or services retrieve them from the queue
+- Users or services process and delete them from the queue
+
+### Amazon Simple Notification Service (SNS)
+A publish/subscribe service that enables software components to send messages to end users all at one go. </br>
+Subscribers can be web servers, email addresses, AWS Lambda functions or other options. </br>
+Here's the flow
+
+- Applications create topics for messages of different categories
+- Subscribers can subscribe to any number of topics
+- Applications publish messages for all topics
+- Subscribers only receive messages for the topics they subscribed
+
+## Additional Compute Services
+Although EC2 instances are flexible, reliable and scalable, there might be better alternatives depending on the use case. </br>
+Many management processes are required, such as the initial set up, scaling configuration, patching when new software packages come out and ensuring solutions have been architected to be hosted in a highly available manner. </br>
+This is where the term ***serverless*** comes in, it means that the underlying infrastructure or instances that host the applications are hidden away and cannot be accessed. </br>
+All of the management aspects of the underlying environment, like provisioning, scaling, high availability and maintenance, are taken care of. </br>
+There are various serverless services that AWS offers. </br>
+
+### Amazon Lambda
+A service that allows code to run without the need of provision or management or servers. </br>
+Here's the flow
+
+- Code is uploaded to Lambda
+- Set triggers from event sources such as AWS services, mobile applications or HTTP endpoints
+- Lambda runs the code only when triggered
+- Pay only for the compute time that's used
+
+###
