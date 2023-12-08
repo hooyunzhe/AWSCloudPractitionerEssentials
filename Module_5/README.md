@@ -112,3 +112,20 @@ Reasons:
 
 Conclusion: ***Use S3 when using complete objects or there are only occasional changes, use EBS when doing complex read, write or change functions***
 
+## Amazon Elastic File System (Amazon EFS)
+A scalable file system for AWS Cloud services and on-premises resources. As files are added or removed, Amazon EFS grows or shrinks automatically. It can scale on demand to petabytes without disrupting applications. </br>
+
+### File storage
+An approach where multiple clients, such as users, applications, servers and more, can access data that is stored in shared file folders. </br>
+File storage servers use block storage with a local file system to organize files. </br>
+
+### Comparing Amazon EBS and Amazon EFS
+- ***Amazon EBS***
+    - Stores data in a ***single Availability Zone***
+    - Amazon EC2 instances must reside within the same AZ to be attached to EBS volumes
+- ***Amazon EFS***
+    - Stores data in ***multiple Availability Zones***
+    - Duplicate storage enables concurrent access of data from all the AZs in the Region where a file system is located
+    - On-premises servers can access Amazon EFS using AWD Direct Connect
+
+
