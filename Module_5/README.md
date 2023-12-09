@@ -128,4 +128,143 @@ File storage servers use block storage with a local file system to organize file
     - Duplicate storage enables concurrent access of data from all the AZs in the Region where a file system is located
     - On-premises servers can access Amazon EFS using AWD Direct Connect
 
+## Amazon Relational Database Service (Amazon RDS)
+Often times, data relates to each other. These relationships need to be stored somewhere. </br>
+This is where ***relational database management system (RDBMS)*** comes in. </br>
 
+### Relational databases
+A type of database where ***structured query language (SQL)*** is used to store and query data. This allows data to be stored in an easily understandable, consistent and scalable way. </br>
+Example data:
+
+| ID | Product name               | Size   | Price |
+| -- | -------------------------- | ------ | ----- |
+| 1  | Medium roast ground coffee | 12 oz. | $5.30 |
+| 2  | Dark roast ground coffee   | 20 oz. | $9.27 |
+
+### Amazon Relational Database Service
+A managed service that enables companies to run relational databases in the AWS cloud. </br>
+It automates tasks such as hardware provisioning, database setup, patching and backups, which reduces time spent on administration. </br>
+Other services can be integrated to fulfill business and operational needs, such as using AWS Lambda to query databases from serverless applications </br>
+Many Amazon RDS database engines offer encryption at rest (protecting data while it's stored) and encryption in transit (protecting data while it's being sent and received). </br>
+
+### Amazon RDS database engines
+Amazon RDS is available on six database engines that optimize for memory, performance or input/output (I/O)
+
+- Amazon Aurora
+- PostgreSQL
+- MySQL
+- MariaDB
+- Oracle Database
+- Microsoft SQL Server
+
+### Amazon Aurora
+An enterprise-class relational database that's compatible with MySQL and PostgreSQL. It's up to five times faster than standard MySQL databases and up to three times faster than standard PostgreSQL databases. </br>
+It helps reduce database costs by reducing unnecessary input/output operations while ensuring that the resources remain reliable and available. </br>
+Good for workloads that require high availability, as it replicates six copies of data across three AZs and continuously backs up the data to Amazon S3. </br>
+
+## Amazon DynamoDB
+Relational databases work great for many use cases and have been the standard type of database historically, but they can have performance and scaling issues when under stress. </br>
+Their rigid schema means they cannot have any variation in the types of data that's stored in a table, making them not ideal for less rigid datasets that are accessed at a very high rate. </br>
+This is where ***non-relational databases***, or ***NoSQL***, databases comes in. </br>
+
+### Nonrelational databases
+A type of database where tables are used to store data. </br>
+Nonrelational databases are often referred to as "NoSQL databases" because they use structures other than rows and columns to organize data. </br>
+One common type of structural approach is ***key-value pairs***, where keys are items and values are attributes, which can be added or removed at any time. </br>
+Additionally, not every item has to have the same attributes. </br>
+
+Example data:
+
+| Key | Value                        |
+| --- | ---------------------------- |
+| 1   | Name: John Doe               |
+|     | Address: 123 Any Street      |
+|     | Favorite drink: Medium latte |
+| 2   | Name: Mary Major             |
+|     | Address: 100 Main Street     |
+|     | Birthday: July 5, 1994       |
+
+### Amazon DynamoDB
+A managed key-value database service that delivers single-digit millisecond performance at any scale. </br>
+It's serverless meaning that there's no need to provision, patch or manage servers and install, maintain or operate software. </br>
+As the size of databases shrink or grow, it automatically scales to adjust for changes in capacity while maintaining consistent performance. This makes it suitable for use cases that requires high performance while scaling. </br>
+
+### Comparing Amazon RDS and Amazon DynamoDB
+- ***Amazon RDS***
+    - Automatic high availability with recovery provided
+    - Customer ownership of data
+    - Customer ownership of schema
+    - Customer control of network
+- ***Amazon DynamoDB***
+    - Key-value structure requiring no advanced schema
+    - Massive throughput capabilities
+    - PB size potential
+    - Granular API access
+
+Example use case: ***sales supply chain management system where weak spots have to be analyzed*** </br>
+Ideal service: ***Amazon RDS*** </br>
+Reasons:
+- Relational databases have been around since the moment businesses started using computers
+- Built for business analytics
+- Able to perform complex analysis of data spread across multiple tables with relational joins and more
+
+Example use case: ***employee contact list with names, phone numbers, emails and employee IDs*** </br>
+Ideal service: ***Amazon DynamoDB*** </br>
+Reasons:
+- Most use cases have nothing to do with complex relationships and are essentially look-up tables
+- Eliminates the overhead of unnecessary relational functionalities
+- Able to build powerful and incredibly fast databases
+
+## Amazon Redshift
+So far, the types of databases mentioned are suitable for workloads that require fast, reliable and current data. They can handle thousands of transactions per second, are highly available and massively durable. </br>
+But there are times where business needs focus on what already happened, this kind of data analysis require databases that are in a whole different realm. </br>
+Most relational databases tend to function fabulously at certain capacities in order to handle the velocity of real time read/write functionality. With modern telemetry and the explosion of IoT, the volume of data will overwhelm even the beefiest traditional relational database. This is where data warehouses and data lakes come in. </br>
+
+Amazon Redshift is a data warehousing service for big data analytics, it offers the ability to collect data from many sources and helps companies understand relationships and trends across their data. </br>
+
+## AWS Database Migration Service
+When companies want to use the various database services on AWS and already have databases either on-premises or in the cloud, they need a way to migrate them. </br>
+
+***AWS Database Migration Service (AWS DMS)*** is a service that enables companies to migrate their relational or nonrelational databases and other types of data stores. Data is moved between a source database and a target database, which can be of the same type or different types. </br>
+The former is called ***homogeneous migrations***, they are straightfoward since schema structures, data types and database code is compatible between source and target. </br>
+The latter is called ***heterogeneous migrations***, they need to go through a two-step process where their schema and code are first converted using the AWS Schema Conversion Tool, then their data migrated from the source to the target. </br>
+During the migration, the source database remains operational, reducing downtime for any applications that rely on it. </br>
+
+### Other use cases for AWS DMS
+- ***Development and test database migrations*** enable developers to test applications against production data without affecting production users
+- ***Database consolidation*** where several databases are combined into a single database
+- ***Continuous replication*** where ongoing copies of data are sent to other target sources instead of a one-time migration
+
+## Additional Database Services
+Despite what database vendor might say, there is no one-size-fits-all database for all purposes. </br>
+Other than the above mentioned database flavors, AWS offers even more databases for special business requirements </br>
+
+- ***Amazon DocumentDB***
+    - A document database service that supports MongoDB workloads
+    - Suitable for content management, catalogs and user profiles
+- ***Amazon Neptune***
+    - A graph database service ideal for highly connected datasets
+    - Suitable for social networking, recommendation engines, fraud detection and knowledge graphs
+- ***Amazon Quantum Ledger Database (Amazon QLDB)***
+    - A ledger database service
+    - Suitable for banking for financial records that require 100% immutability
+- ***Amazon Managed Blockchain***
+    - A service where blockchain networks can be created and managed with open-source frameworks
+    - Suitable for data that requires storage in a distributed ledger system without a central authority
+- ***Amazon ElastiCache***
+    - A service that adds caching layers on top of databases to help improve the read times of common requests from milliseconds to microseconds, it supports Redis and Memcached
+    - Suitable for relational data that needs to be accessed often and at high speeds
+- ***Amazon DynamoDB Accelerator (DAX)***
+    - A native in-memory caching layer for DynamoDB that helps improve response times from single-digit milliseconds to microseconds
+    - Suitable for nonrelational data that needs to be accessed often and at high speeds
+
+# Additional Resources
+- [Cloud Storage on AWS](https://aws.amazon.com/products/storage)
+- [AWS Storage Blog](https://aws.amazon.com/blogs/storage/)
+- [Hands-On Tutorials: Storage](https://aws.amazon.com/getting-started/hands-on/?awsf.getting-started-category=category%23storage&awsf.getting-started-content-type=content-type%23hands-on)
+- [AWS Customer Stories: Storage](https://aws.amazon.com/solutions/case-studies/?customer-references-cards.sort-by=item.additionalFields.publishedDate&customer-references-cards.sort-order=desc&awsf.customer-references-location=*all&awsf.customer-references-segment=*all&awsf.customer-references-product=product%23vpc%7Cproduct%23api-gateway%7Cproduct%23cloudfront%7Cproduct%23route53%7Cproduct%23directconnect%7Cproduct%23elb&awsf.customer-references-category=category%23storage)
+- [AWS Database Migration Service](https://aws.amazon.com/dms/)
+- [Databases on AWS](https://aws.amazon.com/products/databases)
+- [Category Deep Dive: Databases](https://aws.amazon.com/getting-started/deep-dive-databases/)
+- [AWS Database Blog](https://aws.amazon.com/blogs/database/)
+- [AWS Customer Stories: Databases](https://aws.amazon.com/solutions/case-studies/?customer-references-cards.sort-by=item.additionalFields.publishedDate&customer-references-cards.sort-order=desc&awsf.customer-references-location=*all&awsf.customer-references-segment=*all&awsf.customer-references-product=product%23vpc%7Cproduct%23api-gateway%7Cproduct%23cloudfront%7Cproduct%23route53%7Cproduct%23directconnect%7Cproduct%23elb&awsf.customer-references-category=category%23databases)
